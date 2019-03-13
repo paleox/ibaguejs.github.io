@@ -1,3 +1,9 @@
+// Page Loader
+$(document).ready(function () {
+  setTimeout(function () {
+    $('body').addClass('loaded');
+  }, 2000);
+});
 document.addEventListener('DOMContentLoaded', function() {
   // Get upcomming events
   $.ajax({

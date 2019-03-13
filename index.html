@@ -3,35 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffe400">
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
     <title>IbagueJS</title>
+    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/darkly/bulmaswatch.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <style>
-      .is-js, 
-      .has-background-js{
-        background: #ffe400 !important;
-        border-color: #ffe400 !important;
-      }
-      .has-background-js-primary{
-        background: #375a7f !important;
-        border-color: #375a7f !important;
-      }
-      .has-padding{
-        padding-left: 5%;
-        padding-right: 7%;
-      }
-      .image-128x128{
-        width: 128px !important;
-        height: 128px !important;
-        margin-left: 5px;
-      }
-    </style>
   </head>
   <body>
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
     <!-- Header -->
     <section class="hero is-js is-large">
       <div class="hero-body">
@@ -157,13 +145,14 @@
       <div class="container">
         <h1 class="title">Equipo Organizador</h1>
         <div id="organizers" class="columns is-desktop">
-          <div v-for="organizer in organizers" class="column is-one-third-desktop ">
+          <div v-for="(organizer, index) in organizers " class="column is-one-third-desktop ">
             <a v-bind:href="organizer.group_profile.link" target="new"> 
               <div class="card">
                 <nav style="padding-top: 10px;" class="level">
                   <div class="card-image level-item has-text-centered">
                     <figure class='image is-128x128'>
-                      <img class="image-128x128" v-bind:src="organizer.photo.photo_link" alt="Image-organizer">
+                      <img v-if="organizer.photo" class="image-128x128" v-bind:src="organizer.photo.photo_link" alt="Image-organizer">
+                      <div v-else style="font-size: 128px;">🧙</div>
                     </figure>
                   </div>
                 </nav>
