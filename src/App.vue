@@ -26,4 +26,5 @@
     }
   }
 }
+@import '@/scss/main.scss';
 </style>
