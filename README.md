@@ -1,4 +1,4 @@
-# ibavuejs
+# IbagueJS
 
 ## Project setup
 ```

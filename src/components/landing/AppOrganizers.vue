@@ -3,7 +3,7 @@
     .container
       h1.title Equipo Organizador
       #organizers.columns.is-desktop
-        .column.is-one-third-desktop(
+        .column.is-one-quarter-desktop(
           v-for="organizer in organizers",
           :key="organizer.id"
         )
@@ -56,3 +56,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+#organizers {
+  .card {
+    height: 357px;
+  }
+}
+</style>

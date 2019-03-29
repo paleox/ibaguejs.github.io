@@ -10,7 +10,7 @@ npm run build
 cd dist
 
 # if you are deploying to a custom domain
-# echo 'ibaguejs.com' > CNAME
+echo 'ibaguejs.com' > CNAME
 
 git init
 git add -A
@@ -20,6 +20,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:paleox/ibaguejs.github.io.git master:gh-pages
+git push -f git@github.com:ibaguejs/ibaguejs.github.io.git master
 
 cd -

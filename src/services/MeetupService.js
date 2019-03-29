@@ -1,6 +1,6 @@
 import fetchJsonp from 'fetch-jsonp'
 
-const baseURL = 'https://api.meetup.com/IbagueJS'
+const baseURL = process.env.VUE_APP_MEETUP_URL
 
 export default {
   getUpcomingEvents(page) {
