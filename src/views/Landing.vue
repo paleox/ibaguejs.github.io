@@ -1,23 +1,24 @@
 <template lang="pug">
   .landing
-    app-events
-    app-about
-    app-organizers
-    app-sponsors
+    event-list
+    the-about
+    landing-organizers
+    landing-sponsors
 </template>
 
 <script>
-import AppEvents from '@/components/events/AppEvents.vue'
-import AppOrganizers from '@/components/landing/AppOrganizers.vue'
-import AppAbout from '@/components/landing/AppAbout.vue'
-import AppSponsors from '@/components/landing/AppSponsors.vue'
+import EventList from '@/components/events/EventList.vue'
+import TheAbout from '@/components/layout/TheAbout.vue'
+import LandingOrganizers from '@/components/landing/LandingOrganizers.vue'
+import LandingSponsors from '@/components/landing/LandingSponsors.vue'
 
 export default {
+  name: 'landing',
   components: {
-    AppEvents,
-    AppAbout,
-    AppOrganizers,
-    AppSponsors
+    EventList,
+    TheAbout,
+    LandingOrganizers,
+    LandingSponsors
   }
 }
 </script>

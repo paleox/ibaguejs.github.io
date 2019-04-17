@@ -1,21 +1,21 @@
 <template lang="pug">
   #app(:class="{ loaded: loader }")
-    app-loader
-    app-header
+    base-loader
+    the-header
     router-view
-    app-footer
+    the-footer
 </template>
 
 <script>
-import AppLoader from '@/components/shared/AppLoader.vue'
-import AppHeader from '@/components/layout/AppHeader.vue'
-import AppFooter from '@/components/layout/AppFooter.vue'
+import BaseLoader from '@/components/base/BaseLoader.vue'
+import TheHeader from '@/components/layout/TheHeader.vue'
+import TheFooter from '@/components/layout/TheFooter.vue'
 
 export default {
   components: {
-    AppLoader,
-    AppHeader,
-    AppFooter
+    BaseLoader,
+    TheHeader,
+    TheFooter
   },
   data() {
     return {

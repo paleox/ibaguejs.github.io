@@ -3,7 +3,7 @@
     .container
       h1.title Próximos Eventos
       #upcoming-events(v-if="upcomingEvents.length")
-        app-upcoming-events(
+        event-list-upcoming(
           v-for="event in upcomingEvents",
           :key="event.created",
           :event="event"
@@ -24,7 +24,7 @@
                 | propuesta.
       h1.title Eventos Pasados
       #previous-events
-        app-previous-events(
+        event-list-previous(
           v-for="event in previousEvents",
           :key="event.created",
           :event="event"
@@ -32,15 +32,15 @@
 </template>
 
 <script>
-import AppUpcomingEvents from '@/components/events/AppUpcomingEvents.vue'
-import AppPreviousEvents from '@/components/events/AppPreviousEvents.vue'
+import EventListUpcoming from '@/components/events/EventListUpcoming.vue'
+import EventListPrevious from '@/components/events/EventListPrevious.vue'
 
 import MeetupService from '@/services/MeetupService'
 
 export default {
   components: {
-    AppUpcomingEvents,
-    AppPreviousEvents
+    EventListUpcoming,
+    EventListPrevious
   },
   data() {
     return {
