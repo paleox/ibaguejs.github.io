@@ -1,12 +1,13 @@
 <template lang="pug">
-  .box
-    a(:href="event.link", target="_blank")
-      article.media
-        .media-content
-          .content
-            h4
-              span.tag.is-info {{ event.local_date }}
-              | &nbsp;{{ event.name }}
+  a.white--text(:href="event.link", target="_blank")
+    v-layout(row, wrap, align-center, class="pa-3 text-xs-left")
+      v-flex(xs12, sm10, offset-sm1)
+        h4.title.ml-1.mb-2 {{ event.name }}
+        v-chip(label, small, color="primary", text-color="white")
+          v-avatar
+            v-icon(size="14px") fas fa-calendar-day
+          | {{ event.local_date }}
+    v-divider
 </template>
 
 <script>

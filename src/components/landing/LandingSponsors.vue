@@ -1,21 +1,24 @@
 <template lang="pug">
-  section.section.has-text-centered
-    .container
-      h1.title Patrocinadores
-      .columns.is-mobile.is-centered
-        .column.is-one-third-desktop(
+  .sponsors
+    v-container.text-xs-center(grid-list-md)
+      v-layout(row, wrap, justify-center)
+        v-flex(xs12)
+          h2.display-1 Patrocinadores
+        v-flex(
+          xs4,
+          :class="{'px-2': $vuetify.breakpoint.smAndDown}"
           v-for="sponsor in sponsors"
           :key="sponsor.id"
         )
-          a(
-            :href="sponsor.page",
-            target="_blank"
-          )
-            figure.image
-              img(
-                style="max-height: 250px;"
-                :src="sponsor.image"
-              )
+          a(:href="sponsor.page", target="_blank")
+            v-img(
+              height="auto",
+              width="100%",
+              max-height="250px"
+              :src="sponsor.image"
+              aspect-ratio="1",
+              contain
+            )
 </template>
 
 <script>

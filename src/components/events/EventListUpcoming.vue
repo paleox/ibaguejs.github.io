@@ -1,17 +1,25 @@
 <template lang="pug">
-  .box
-    a(:href="event.link" target="_blank")
-      article.media
-        .media-content
-          .content
-            h2 {{ event.name }}
-            .has-text-light.has-padding(v-html="event.description")
-          nav.level.is-mobile
-            .level-left
-              .tags
-                span.tag.is-success Asistentes: {{ event.yes_rsvp_count }}
-                span.tag.is-info Lugar: {{ event.venue.name }}
-                span.tag.is-info Fecha/Hora: {{ event.local_date }} / {{ event.local_time }}
+  a.white--text(:href="event.link" target="_blank",)
+    v-layout(row, wrap, align-center, class="pa-3 text-xs-left")
+      v-flex(xs12)
+        .headline.text-xs-center.font-weight-bold.pb-3 {{ event.name }}
+        div(
+          :class="{'mx-5 px-5': $vuetify.breakpoint.mdAndUp}"
+          v-html="event.description"
+        )
+      v-flex(xs12, sm10, offset-sm1)
+        v-chip(label, small, color="primary", text-color="white")
+          v-avatar
+            v-icon(size="14px") fas fa-map-marker-alt
+          | {{ event.venue.name }}
+        v-chip(label, small, color="primary", text-color="white")
+          v-avatar
+            v-icon(size="14px") fas fa-calendar-day
+          | {{ event.local_date }} / {{ event.local_time }}
+        v-chip(label, small, color="success", text-color="white")
+          v-avatar
+            v-icon(size="14px") fas fa-walking
+          | {{ event.yes_rsvp_count }}
 </template>
 
 <script>

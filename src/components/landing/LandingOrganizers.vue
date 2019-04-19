@@ -1,30 +1,28 @@
 <template lang="pug">
-  section.section.has-text-centered
-    .container
-      h1.title Equipo Organizador
-      #organizers.columns.is-desktop
-        .column.is-one-quarter-desktop(
-          v-for="organizer in organizers",
+  .organizers
+    v-container.text-xs-center(grid-list-md)
+      v-layout(row, wrap, justify-center)
+        v-flex(xs12)
+          h2.display-1.pb-3 Equipo Organizador
+        v-flex(
+          xs12,
+          sm4,
+          v-for="organizer in organizers"
           :key="organizer.id"
         )
-          a(:href="organizer.group_profile.link", target="_blank")
-            .card
-              nav.level(style="padding-top: 10px;")
-                .card-image.level-item.has-text-centered
-                  figure.image.is-128x128
-                    img(
-                      v-if="organizer.photo",
-                      class="image-128x128",
-                      :src="organizer.photo.photo_link",
-                      alt="Foto Organizador"
-                    )
-                    div(v-else, style="font-size: 128px;") 🧙
-              .card-content
-                .media
-                  .media-content
-                    p.title.is-4 {{ organizer.name }}
-                    p.subtitle.is-6 {{ getRole(organizer.group_profile.role) }}
-                .content {{ organizer.bio }}
+          v-card.ma-3(flat, :href="organizer.group_profile.link", target="_blank")
+            v-responsive.pt-4
+              v-avatar(size="125")
+                img(
+                  v-if="organizer.photo",
+                  :src="organizer.photo.photo_link"
+                )
+                div(v-else, style="font-size: 128px;") 🧙
+            v-card-title.justify-center(primary-title)
+              div
+                h3.headline {{ organizer.name }}
+                span.grey--text {{ getRole(organizer.group_profile.role) }}
+            v-card-text {{ organizer.bio }}
 </template>
 
 <script>
@@ -47,6 +45,8 @@ export default {
       switch (role) {
         case 'organizer':
           return 'Organizador'
+        case 'coorganizer':
+          return 'Co-Organizador'
         case 'assistant_organizer':
           return 'Asistente Organizadorador'
         default:
@@ -58,9 +58,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#organizers {
-  .card {
-    height: 357px;
+.organizers {
+  .v-card {
+    min-height: 336px;
   }
 }
 </style>
