@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IbaguéJS</title>
     <meta name="theme-color" content="#ffe400" />
     <link rel="icon" href="<%= BASE_URL %>favicon.png" />
     <meta name="description" content="Comunidad JavaScript de Ibagué" />
@@ -10,19 +11,58 @@
       name="keywords"
       content="ibaguejs, javascript, ibagué, js, comunidad, meetup"
     />
-    <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="ibaguejs.com" />
-    <meta property="og:title" content="IbagueJS" />
+    <!-- og tags-->
+    <meta property="og:title" content="IbaguéJS" />
     <meta property="og:description" content="Comunidad JavaScript de Ibagué" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="ibaguejs.com" />
+    <meta property="og:image" content="http://ibaguejs.com/share_image.png" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="IbaguéJS" />
+
+    <!-- Twitter Cards-->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@ibaguejs" />
+    <meta name="twitter:title" content="IbaguéJS" />
+    <meta name="twitter:description" content="Comunidad JavaScript de Ibagué" />
     <meta
-      property="og:image"
-      content="http://ibaguejs.com/assets/favicon.png"
+      name="twitter:image:src"
+      content="http://ibaguejs.com/share_image.png"
     />
-    <title>IbagueJS</title>
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
-    ></script>
+    <meta name="twitter:domain" content="ibaguejs.com" />
+
+    <link rel="canonical" href="http://ibaguejs.com/" />
+
+    <!-- Google Analytics -->
+    <script>
+      ;(function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r
+        ;(i[r] =
+          i[r] ||
+          function() {
+            ;(i[r].q = i[r].q || []).push(arguments)
+          }),
+          (i[r].l = 1 * new Date())
+        ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+        a.async = 1
+        a.src = g
+        m.parentNode.insertBefore(a, m)
+      })(
+        window,
+        document,
+        'script',
+        'https://www.google-analytics.com/analytics.js',
+        'ga'
+      )
+
+      ga('create', 'UA-49501333-5', 'auto')
+      ga('send', 'pageview')
+    </script>
+    <!-- End Google Analytics -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+    />
   </head>
   <body>
     <noscript>
